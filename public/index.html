@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SVR</title>
+    </head>
+    <body>
+        <!-- Dependencies -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+
+        <!-- Main -->
+        <h1 id="said" style="position: absolute; top: 250px; left: 600px;">None</h1>
+
+        <!-- Scripts -->
+        <script>
+            if(annyang){
+                //Variables
+                const Said = document.getElementById("said")
+
+                const Commands = {
+                    "*word": function(word){
+                        Said.innerText = word
+                    }
+                }
+
+                //Configurations
+                annyang.addCommands(Commands)
+
+                //Main
+                annyang.start()
+            }
+        </script>
+    </body>
+</html>
